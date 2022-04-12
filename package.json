@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {    
-    "start": "npm run dev",
+    "start": "node src/app.js",
     "start:dev": "nodemon src/app.js"
   },
   "keywords": [],
