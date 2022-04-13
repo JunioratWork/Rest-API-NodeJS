@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-
+const request = require('request');
 /*
 router.post('/', (req, res) => {
     console.log(req.body);
@@ -20,11 +20,12 @@ router.post('/', (req, res) => {
     }
 };*/
 
-router.post('/init', (req, res) => {
+//router.post('/init', (req, res) => {
+router.post('/init', function(req, res, next) {
   var order = req.body;
 
   // Call CreatePayment web service to create the form token
-  const request = require('request');
+  
   request.post({
     url: "https://api.micuentaweb.pe/api-payment/V4/Charge/CreatePayment",
     headers: {
