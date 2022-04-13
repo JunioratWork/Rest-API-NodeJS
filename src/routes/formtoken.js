@@ -22,7 +22,19 @@ router.post('/', (req, res) => {
 
 //router.post('/init', (req, res) => {
 router.post('/init', function(req, res, next) {
+
   var order = req.body;
+
+  if(order==null){
+    order = {
+      "amount":   180,
+      "currency": "PEN",
+      "orderId":  "myOrderId-999999",
+      "customer": {
+          "email": "sample@example.com"
+      }
+  };
+  }
 
   // Call CreatePayment web service to create the form token
   
