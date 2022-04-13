@@ -15,7 +15,7 @@ app.use(express.json());
 //Rutas de conexion
 app.use(require('./routes/index'));
 app.use('/api/movies',require('./routes/movies'));
-app.use('/api/izipay',require('./routes/formtoken.js'));
+app.use('/payment',require('./routes/formtoken.js'));
 
 //Emprezar el servidor
 //app.listen(app.get('port'), () =>{

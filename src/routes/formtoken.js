@@ -11,16 +11,17 @@ router.post('/', (req, res) => {
 /* Init payment form */
 //router.post('/init', function(req, res, next) {
 
-var order = {
+/*var order = {
     "amount":   180,
     "currency": "PEN",
     "orderId":  "myOrderId-999999",
     "customer": {
         "email": "sample@example.com"
     }
-};
-router.post('/', (req, res) => {
-  //var order = req.body;
+};*/
+
+router.post('/init', (req, res) => {
+  var order = req.body;
 
   // Call CreatePayment web service to create the form token
   const request = require('request');
