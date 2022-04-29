@@ -31,7 +31,7 @@ router.post('/init', function(req, res, next)
   
   if(isEmptyObject(order) === true || isEmptyObject(order) === 'undefined'){
       order = {
-        "amount":   180,
+        "amount":   200,
         "currency": "PEN",
         "orderId":  "myOrderId-999999",
         "customer": {
@@ -81,6 +81,7 @@ router.post('/init', function(req, res, next)
       console.error(body);
       res.status(500).send('error');
     }  
+     
 
   });
 });
