@@ -36,7 +36,14 @@ router.post('/init', function(req, res, next)
         "orderId":  "myOrderId-999999",
         "customer": {
             "email": "sample@example.com"
+        },
+        /*
+        "transactionOptions": {
+          "cardOptions": {      
+            "installmentNumber": 0      
+          }      
         }
+        */
       };    
       console.log("Este es la informacion del BODY en el IF: ");
       console.log(order);
@@ -62,7 +69,7 @@ router.post('/init', function(req, res, next)
   request.post({
     url: "https://api.micuentaweb.pe/api-payment/V4/Charge/CreatePayment",
     headers: {
-      'Authorization': 'Basic OTIyMzc0MTU6dGVzdHBhc3N3b3JkX2lqcGxCMU90dXU4eko1eHlsdDVkREdjSnZrQnlmRDBMN0p3ZTdlc2dqM2cwZQ==',
+      'Authorization': 'Basic NTE0NDczNzg6dGVzdHBhc3N3b3JkXzZBZnN6cktnVVVNbXd1eGtZTTU0b0s3RlJKdU1JVEE5NHloYlFORmtuZGswMw==',
       'Content-Type': 'application/json'
     },
     json: order

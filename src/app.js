@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 const app = express();
@@ -7,7 +8,9 @@ const morgan = require('morgan');
 //Confiuguracion del puerto
 //app.set('port', process.env.PORT || 3000)
 
+const lista= ['http://localhost:3000','https://izipay-ejemplo-php.000webhostapp.com'];
 
+app.use(cors({origin: lista}));
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
