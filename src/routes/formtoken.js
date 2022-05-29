@@ -2,32 +2,12 @@ const { Router } = require("express");
 const router = Router();
 const request = require('request');
 
-/*
-router.post('/', (req, res) => {
-    console.log(req.body);
-    res.send('recibido');
-});
-*/
-
-/* Init payment form */
-//router.post('/init', function(req, res, next) {
-
-/*var order = {
-    "amount":   180,
-    "currency": "PEN",
-    "orderId":  "myOrderId-999999",
-    "customer": {
-        "email": "sample@example.com"
-    }
-};*/
-
-//router.post('/init', (req, res) => {
-router.post('/init', function(req, res, next) 
+router.post('/', function(req, res, next) 
 {
   var order = req.body;
   
-  console.log("Este es la informacion del BODY antes de entrar a los IF: ");
-  console.log(isEmptyObject(order));
+  //console.log("Este es la informacion del BODY antes de entrar a los IF: ");
+  //console.log(isEmptyObject(order));
   
   if(isEmptyObject(order) === true || isEmptyObject(order) === 'undefined'){
       order = {
@@ -37,21 +17,23 @@ router.post('/init', function(req, res, next)
         "customer": {
             "email": "sample@example.com"
         },
-        /*
-        "transactionOptions": {
-          "cardOptions": {      
-            "installmentNumber": 0      
-          }      
-        }
-        */
+        
+        /**********************************************************************/
+        /*Se envia "0" si no quieres que se visualice las cuotas y pago diferido*/
+        /**********************************************************************/
+          /*"transactionOptions": {
+            "cardOptions": {      
+              "installmentNumber": 0      
+            }      
+          }*/
       };    
-      console.log("Este es la informacion del BODY en el IF: ");
-      console.log(order);
+      //console.log("Este es la informacion del BODY en el IF: ");
+      //console.log(order);
   }
   else{
     order = req.body;
-    console.log("Este es la informacion del BODY en el ELSE: ");
-    console.log(order);
+    //console.log("Este es la informacion del BODY en el ELSE: ");
+    //console.log(order);
   } 
 
   //comprueba si el body esta vacio, devuelve true si esta vacio

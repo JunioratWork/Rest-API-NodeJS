@@ -1,16 +1,17 @@
 const express = require('express');
-const cors = require('cors');
+const morgan = require('morgan');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 const app = express();
-const morgan = require('morgan');
+
+
+//Habilitar bloqueo de CORS
+const cors = require('cors');
+const lista= ['http://localhost:3000','https://izipay-ejemplo-php.000webhostapp.com'];
+app.use(cors({origin: lista}));
 
 //Confiuguracion del puerto
 //app.set('port', process.env.PORT || 3000)
-
-const lista= ['http://localhost:3000','https://izipay-ejemplo-php.000webhostapp.com'];
-
-app.use(cors({origin: lista}));
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -18,7 +19,10 @@ app.use(express.json());
 //Rutas de conexion
 app.use(require('./routes/index'));
 app.use('/api/movies',require('./routes/movies'));
-app.use('/payment',require('./routes/formtoken.js'));
+app.use('/CreatePayment',require('./routes/formtoken.js'));
+app.use('/PaymentOrder',require('./routes/PaymentOrderGet.js'));
+app.use('/PaymentOrder',require('./routes/PaymentOrderUpdate.js'));
+app.use('/Token',require('./routes/TokenCancel.js'));
 
 //Emprezar el servidor
 //app.listen(app.get('port'), () =>{
