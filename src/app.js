@@ -24,6 +24,8 @@ app.use('/PaymentOrder',require('./routes/PaymentOrderGet.js'));
 app.use('/PaymentOrder',require('./routes/PaymentOrderUpdate.js'));
 app.use('/Token',require('./routes/TokenCancel.js'));
 
+app.use('/APImovil',require('./routes/servidormovil.js'));
+
 //Emprezar el servidor
 //app.listen(app.get('port'), () =>{
  //  console.log(`Server on port ${app.get('port')}`);
