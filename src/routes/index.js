@@ -7,6 +7,12 @@ router.post('/', (req, res) => {
         "Edad": "31"
     };
     res.json("Hola este es un cambio")
+    
+    
+      // Send back the form token to the client side
+      const datos = kr-answer;
+      res.send(datos);
+    
 });
 
 module.exports = router;
