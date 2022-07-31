@@ -23,6 +23,7 @@ app.use('/CreatePayment',require('./routes/formtoken.js'));
 app.use('/PaymentOrder',require('./routes/PaymentOrderGet.js'));
 app.use('/PaymentOrder',require('./routes/PaymentOrderUpdate.js'));
 app.use('/Token',require('./routes/TokenCancel.js'));
+app.use('/Respuesta',require('./routes/RespuestaIPN.js'));
 
 app.use('/APImovil',require('./routes/servidormovil.js'));
 
