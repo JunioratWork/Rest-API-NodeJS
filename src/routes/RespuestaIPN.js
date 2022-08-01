@@ -5,8 +5,8 @@ const request = require('request');
 router.post('/', function(req, res, next) 
 {
 
-  const datos = req.body;
-  res.json(datos);
+  const datos = req.params;
+  res.json(datos.kr-answer);
     
 
 });
