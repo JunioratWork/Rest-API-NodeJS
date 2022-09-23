@@ -2,26 +2,25 @@ const { Router } = require("express");
 const router = Router();
 const request = require('request');
 
-router.post('/', function(req, res, next) 
-{
-    request.post(
-  function(error, response, body) {
+const datos = require('../sample.json');
+console.log(datos)
 
-    if (body.status === 'SUCCESS')
-    {
-      // Send back the form token to the client side
-      const formtoken = body;
-      res.send(formtoken);
-    }
-    else
-    {
-      // Do your own error handling  
-      console.error(body);
-      res.status(500).send('error');
-    }  
-     
+router.get('/test',(req,res) => {
+  
+    res.json(datos);
 
-  });
+});
+
+router.post('/',(req,res) => {
+
+    //console.log(req.body);
+    const respuesta = {...req.body};
+
+    datos.push(respuesta);
+
+    res.json(datos);
+
+        
 
 });
 
