@@ -7,7 +7,7 @@ const app = express();
 
 //Habilitar bloqueo de CORS
 const cors = require('cors');
-const lista= ['http://localhost:3000','https://izipay-ejemplo-php.000webhostapp.com','https://prueba55.herokuapp.com','http://127.0.0.1:5501','http://127.0.0.1:5500'];
+const lista= ['http://localhost:3000','http://localhost:4200','https://izipay-ejemplo-php.000webhostapp.com','https://prueba55.herokuapp.com','http://127.0.0.1:5501','http://127.0.0.1:5500'];
 app.use(cors({origin: lista}));
 
 //Confiuguracion del puerto
