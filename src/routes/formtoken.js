@@ -51,7 +51,7 @@ router.post('/', function(req, res, next)
   request.post({
     url: "https://api.micuentaweb.pe/api-payment/V4/Charge/CreatePayment",
     headers: {
-      'Authorization': 'Basic NTE0NDczNzg6dGVzdHBhc3N3b3JkXzZBZnN6cktnVVVNbXd1eGtZTTU0b0s3RlJKdU1JVEE5NHloYlFORmtuZGswMw==',
+      'Authorization': 'Basic MjEzNTk2NDg6dGVzdHBhc3N3b3JkX204UjlNdExTeFFGWDF1dU9uS0R2RGVaUURKc3FHakx4dXAxZGZnZVVDUEpVQg==',
       'Content-Type': 'application/json'
     },
     json: order
